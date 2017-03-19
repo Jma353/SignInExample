@@ -14,6 +14,7 @@
 		7F4920341E7DF85000EBED81 /* SignInExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F4920321E7DF85000EBED81 /* SignInExample.xcdatamodeld */; };
 		7F4920361E7DF85000EBED81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4920351E7DF85000EBED81 /* Assets.xcassets */; };
 		7F4920391E7DF85000EBED81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4920371E7DF85000EBED81 /* LaunchScreen.storyboard */; };
+		7F597AEE1E7F1ADB00E1374B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F597AED1E7F1ADB00E1374B /* GoogleService-Info.plist */; };
 		7FA7DECF1E7DFAB300733E4D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7DECE1E7DFAB300733E4D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		7F4920351E7DF85000EBED81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F4920381E7DF85000EBED81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F49203A1E7DF85000EBED81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F597AED1E7F1ADB00E1374B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FA7DECE1E7DFAB300733E4D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BAAFC9BB708F0D9F8E326C1F /* Pods-SignInExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignInExample/Pods-SignInExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 		7F49202A1E7DF85000EBED81 /* SignInExample */ = {
 			isa = PBXGroup;
 			children = (
+				7F597AED1E7F1ADB00E1374B /* GoogleService-Info.plist */,
 				7F49202B1E7DF85000EBED81 /* AppDelegate.swift */,
 				7F49202D1E7DF85000EBED81 /* ViewController.swift */,
 				7F49202F1E7DF85000EBED81 /* Main.storyboard */,
@@ -158,6 +161,7 @@
 			files = (
 				7F4920391E7DF85000EBED81 /* LaunchScreen.storyboard in Resources */,
 				7FA7DECF1E7DFAB300733E4D /* Default-568h@2x.png in Resources */,
+				7F597AEE1E7F1ADB00E1374B /* GoogleService-Info.plist in Resources */,
 				7F4920361E7DF85000EBED81 /* Assets.xcassets in Resources */,
 				7F4920311E7DF85000EBED81 /* Main.storyboard in Resources */,
 			);

@@ -10,24 +10,64 @@ import UIKit
 import CoreData
 import FacebookCore
 import FacebookLogin
+import Google
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     
-    
+    /* URL Callback Functionality */
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url.absoluteString)
+        
+        /* Google Login */
+        if url.absoluteString.contains("googleusercontent.apps") {
+            return GIDSignIn.sharedInstance()
+                .handle(url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        }
+        
         /* Facebook Login */
         return SDKApplicationDelegate.shared.application(app, open: url, options: options)
     }
     
+    /* Delegate information for various sign-in configurations */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /* Facebook Login */
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        /* Google Login */
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
         
+    }
+    
+    /* Google Sign In */
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            print("Google Sign In Details: \n\(userId)\n\(idToken)\n\(fullName)\n\(givenName)\n\(familyName)\n\(email)")
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    /* Google Sign In */
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
