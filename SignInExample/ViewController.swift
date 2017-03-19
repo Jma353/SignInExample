@@ -11,23 +11,23 @@ import FacebookCore
 import FacebookLogin
 
 class ViewController: UIViewController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
-    loginButton.center = view.center
-    view.addSubview(loginButton)
     
-    if let accessToken = AccessToken.current {
-      print("We are logged in! Our access token is \(accessToken)")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+        
+        if let accessToken = AccessToken.current {
+            print("We are logged in! Our access token is \(accessToken)")
+        }
     }
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
 }
 
