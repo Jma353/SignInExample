@@ -1,5 +1,4 @@
 # Sign In Example
 
-Example Swift project with `Facebook` sign in setup.  
+Example Swift project with `Facebook Sign In` and `Google Sign In` setup 
 
-`Google Sign In` coming soon.  
